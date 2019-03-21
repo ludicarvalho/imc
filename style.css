@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Font: "Arial, Helvetica, sans-serif";
+    --TamFont: 20pt;
+    --CorFont: white;
+}
+
+body {
+    font-family: var(--Font);
+    font-size: var(--TamFont);
+}
+
+.header {
+    text-align: center;
+}
+
+.config {
+    font-family: var(--Font);
+    font-size: var(--TamFont);
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--CorFont);
+}
+
+.lb {
+    width: 30%;
+    float: left;
+}
+
+.mb-3 {
+    margin: 50px 0 0 0;
+    float: left;
+    width: 100%;
+}
+
+.lbDois {
+    float: left;
+    width: 70%;
+}
+
+input[type=number] {
+    background: none;
+    width: 97%;
+    border: 1px solid white;
+    color: white;
+}
+
+.botao {
+    border-radius: 8px;
+    width: 100%;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
