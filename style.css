@@ -7,15 +7,38 @@
     --Font: "Arial, Helvetica, sans-serif";
     --TamFont: 20pt;
     --CorFont: white;
+    --CorFundo: #54FF9F;
 }
 
 body {
     font-family: var(--Font);
     font-size: var(--TamFont);
+    background: #f5f5f5 url("fundo.jpg") no-repeat fixed bottom;
+    background-size: cover;
 }
 
 .header {
-    text-align: center;
+    margin-left: none;
+}
+
+.borda {
+    border-bottom: 3px solid var(--CorFundo);
+}
+
+.warning {
+    color: #ffc107;
+}
+
+.danger {
+    color: #dc3545;
+}
+
+.success {
+    color: #28a745;
+}
+
+.between {
+    color: #fd7e14;
 }
 
 .config {
@@ -24,6 +47,7 @@ body {
 }
 
 .container {
+    padding: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -31,6 +55,7 @@ body {
     width: 300px;
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--CorFont);
+    border-radius: 16px;
 }
 
 .lb {
@@ -52,7 +77,7 @@ body {
 input[type=number] {
     background: none;
     width: 97%;
-    border: 1px solid white;
+    border: 0px solid white;
     color: white;
 }
 
@@ -62,4 +87,12 @@ input[type=number] {
     background: none;
     color: white;
     cursor: pointer;
+    border: 2px solid var(--CorFundo);
+}
+
+.botao:hover {
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    background-color: var(--CorFundo);
+    color: #000;
+    transition: 0.1s;
 }

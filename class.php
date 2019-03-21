@@ -13,22 +13,22 @@ class Imc {
 
         switch ($result) {
             case $result <= 18.5:
-                $msg =  "Total: $NumFtd.<br/>Abaixo do peso";
+                $msg =  "Total: $NumFtd.<br/><span class='warning'>Abaixo do peso</span>.";
                 break;
             case $result >18.5 and $result < 25:
-                $msg =  "Total: $NumFtd.<br/>Peso normal";
+                $msg =  "Total: $NumFtd.<br/><span class='success'>Peso normal</span>.";
                 break;
             case $result >= 25 and $result < 30:
-                $msg = "Total: $NumFtd.<br/>Sobrepeso";
+                $msg = "Total: $NumFtd.<br/><span class='warning'>Sobrepeso</span>.";
                 break;
             case $result >= 30 and $result < 35:
-                $msg = "Total: $NumFtd.<br/>Obesidade grau 1";
+                $msg = "Total: $NumFtd.<br/><span class='between'>Obesidade grau 1</span>.";
                 break;
             case $result >= 35 and $result < 40:
-                $msg = "Total: $NumFtd.<br/>Obesidade grau 2";
+                $msg = "Total: $NumFtd.<br/><span class='danger'>Obesidade grau 2</span>.";
                 break;
             case $result >= 40:
-                $msg = "Total: $NumFtd.<br/>Obesidade grau 3";
+                $msg = "Total: $NumFtd.<br/><span class='danger'>Obesidade grau 3</span>.";
                 break;
             default:
                 $msg = "ERRO!!!!";
