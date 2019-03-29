@@ -1,13 +1,5 @@
 <?php
 include "class.php";
-
-if (!empty($_POST)) {
-    $pc = new Imc;
-    $pc->altura = $_POST['altura'];
-    $pc->peso = $_POST['peso'];
-    $resultado = $pc->calcular();
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,6 +42,10 @@ if (!empty($_POST)) {
     </div>
 <?php
 if (!empty($_POST)) {
+    $pc = new Imc;
+    $pc->altura = $_POST['altura'];
+    $pc->peso = $_POST['peso'];
+    $resultado = $pc->calcular();
 ?>
     <div class="mb-3">
         <hr/>
