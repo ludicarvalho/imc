@@ -1,41 +1,70 @@
 <?php
 
 class Imc {
-    var $peso;
-    var $altura;
+    private $peso;
+    private $altura;
 
+    function __construct($p, $a)
+    {
+        $this->peso = $p;
+        $this->altura = $a;
+    }
     function calcular() {
 
-        $auxUM = $this->altura * $this->altura;
-        $auxDois = $this->peso / $auxUM;
-        $result = $auxDois;
-        $NumFtd = number_format($result,2,",",".");
+        $msg = "<span class='danger'>Peso e altura não compatíveis.</span>";
+        
+        if ($this->altura > 1 || $this->peso > 19) {
 
-        switch ($result) {
-            case $result <= 18.5:
-                $msg =  "Total: $NumFtd.<br/><span class='warning'>Abaixo do peso</span>.";
-                break;
-            case $result >18.5 and $result < 25:
-                $msg =  "Total: $NumFtd.<br/><span class='success'>Peso normal</span>.";
-                break;
-            case $result >= 25 and $result < 30:
-                $msg = "Total: $NumFtd.<br/><span class='warning'>Sobrepeso</span>.";
-                break;
-            case $result >= 30 and $result < 35:
-                $msg = "Total: $NumFtd.<br/><span class='between'>Obesidade grau 1</span>.";
-                break;
-            case $result >= 35 and $result < 40:
-                $msg = "Total: $NumFtd.<br/><span class='danger'>Obesidade grau 2</span>.";
-                break;
-            case $result >= 40:
-                $msg = "Total: $NumFtd.<br/><span class='danger'>Obesidade grau 3</span>.";
-                break;
-            default:
-                $msg = "ERRO!!!!";
-                break;
-
+            $result = $this->peso / ($this->altura ^ 2);
+            $NumFtd = number_format($result,2,",",".");
+    
+            switch ($result) {
+                case $result <= 18.5:
+                    $msg = 	 "Resultado: $NumFtd."
+                            ."\n\t\t\t"
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='warning'>Abaixo do peso</span>.";
+                    break;
+                case $result > 18.5 and $result < 25:
+                    $msg = 	 "Resultado: $NumFtd."
+                            ."\n\t\t\t"
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='success'>Peso normal</span>.";
+                    break;
+                case $result >= 25 and $result < 30:
+                    $msg = 	 "Resultado: $NumFtd."
+                            ."\n\t\t\t"
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='warning'>Sobrepeso</span>.";
+                    break;
+                case $result >= 30 and $result < 35:
+                    $msg =  "Resultado: $NumFtd."
+                            ."\n\t\t\t"
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='between'>Obesidade grau 1</span>.";
+                    break;
+                case $result >= 35 and $result < 40:
+                    $msg = 	 "Resultado: $NumFtd."
+                            ."\n\t\t\t"
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='danger'>Obesidade grau 2</span>.";
+                    break;
+                case $result >= 40:
+                    $msg = 	 "Resultado: $NumFtd."
+                            ."<br/>\n"
+                            ."\t\t\t"
+                            ."<span class='danger'>Obesidade grau 3</span>.";
+                    break;
+                default:
+                    $msg = "ERRO!!!!";
+                    break;
+            }
         }
-
         return $msg;
     }
 }
