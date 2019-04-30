@@ -4,7 +4,7 @@
 }
 
 :root {
-    --Font: "Arial, Helvetica, sans-serif";
+    --Font: 'Arial', sans-serif;
     --TamFont: 20pt;
     --CorFont: white;
     --CorFundo: #54FF9F;
@@ -13,7 +13,7 @@
 body {
     font-family: var(--Font);
     font-size: var(--TamFont);
-    background: #f5f5f5 url("fundo.jpg") no-repeat fixed bottom;
+    background: #f5f5f5 url("fundo.jpg") no-repeat fixed;
     background-size: cover;
 }
 
@@ -95,4 +95,11 @@ input[type=number] {
     background-color: var(--CorFundo);
     color: #000;
     transition: 0.1s;
+}
+
+.ps {
+    border: 2px solid var(--CorFundo);
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
 }
